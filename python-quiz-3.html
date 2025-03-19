@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .option {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+        .option:hover {
+            background-color: #ddd;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Trắc nghiệm Python</h1>
+
+    <div class="question">
+        <p><strong>Câu 1:</strong> Trong các kiểu dữ liệu sau, kiểu nào chỉ bao gồm 2 giá trị cho phép</p>
+        <button class="option" onclick="checkAnswer(1, 'A')">A. int</button>
+        <button class="option" onclick="checkAnswer(1, 'B')">B. float</button>
+        <button class="option" onclick="checkAnswer(1, 'C')">C. bool</button>
+        <button class="option" onclick="checkAnswer(1, 'D')">D. str</button>
+        <div class="result" id="result1"></div>
+    </div>
+
+    <div class="question">
+        <p><strong>Câu 2:</strong> Trong các kiểu dữ liệu sau, kiểu nào cho phép tính len()</p>
+        <button class="option" onclick="checkAnswer(2, 'A')">A. int</button>
+        <button class="option" onclick="checkAnswer(2, 'B')">B. float</button>
+        <button class="option" onclick="checkAnswer(2, 'C')">C. bool</button>
+        <button class="option" onclick="checkAnswer(2, 'D')">D. str</button>
+        <div class="result" id="result2"></div>
+    </div>
+
+    <div class="question">
+        <p><strong>Câu 3:</strong> Từ khóa nào bắt buộc phải có trong định nghĩa một function bình thường (không phải lambda)</p>
+        <button class="option" onclick="checkAnswer(3, 'A')">A. def</button>
+        <button class="option" onclick="checkAnswer(3, 'B')">B. return</button>
+        <button class="option" onclick="checkAnswer(3, 'C')">C. if</button>
+        <button class="option" onclick="checkAnswer(3, 'D')">D. else</button>
+        <div class="result" id="result3"></div>
+    </div>
+
+    <div class="question">
+        <p><strong>Câu 4:</strong> Function không có return sẽ trả về giá trị gì?</p>
+        <button class="option" onclick="checkAnswer(4, 'A')">A. 0</button>
+        <button class="option" onclick="checkAnswer(4, 'B')">B. False</button>
+        <button class="option" onclick="checkAnswer(4, 'C')">C. None</button>
+        <button class="option" onclick="checkAnswer(4, 'D')">D. Không có giá trị</button>
+        <div class="result" id="result4"></div>
+    </div>
+
+    <div class="question">
+        <p><strong>Câu 5:</strong> Một function tên là func không có tham số, func sẽ được gọi thế nào để thực thi?</p>
+        <button class="option" onclick="checkAnswer(5, 'A')">A. func</button>
+        <button class="option" onclick="checkAnswer(5, 'B')">B. func()</button>
+        <button class="option" onclick="checkAnswer(5, 'C')">C. func(False)</button>
+        <button class="option" onclick="checkAnswer(5, 'D')">D. func(None)</button>
+        <div class="result" id="result5"></div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: "C",  // bool là kiểu chỉ có 2 giá trị cho phép, là False và True
+            2: "D",  // str cho phép tính len()
+            3: "A",  // def là từ khóa định nghĩa function
+            4: "C",  // function không có return sẽ trả về giá trị None
+            5: "B"   // gọi hàm func() để thực thi
+        };
+
+        function checkAnswer(questionNumber, selectedOption) {
+            const resultElement = document.getElementById("result" + questionNumber);
+            if (selectedOption === correctAnswers[questionNumber]) {
+                resultElement.textContent = "✅ Chính xác!";
+                resultElement.className = "result correct";
+            } else {
+                resultElement.textContent = "❌ Sai rồi, thử lại!";
+                resultElement.className = "result incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
