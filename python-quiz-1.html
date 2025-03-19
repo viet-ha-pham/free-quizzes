@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài trắc nghiệm Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bài Trắc Nghiệm Python</h1>
+    <form id="quizForm">
+        <div id="quizContainer"></div>
+        <button type="button" onclick="submitQuiz()">Nộp bài</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        const questions = [
+            { text: "Python là một ngôn ngữ lập trình biên dịch.", answer: false },
+            { text: "Trong Python, print('Hello') sẽ hiển thị Hello ra màn hình.", answer: true },
+            { text: "Python sử dụng dấu ; để kết thúc mỗi dòng lệnh.", answer: false },
+            { text: "Biến trong Python không cần khai báo kiểu dữ liệu trước khi sử dụng.", answer: true },
+            { text: "Dấu # trong Python được dùng để chú thích một dòng.", answer: true }
+        ];
+
+        function loadQuestions() {
+            const quizContainer = document.getElementById("quizContainer");
+            questions.forEach((q, index) => {
+                const div = document.createElement("div");
+                div.classList.add("question");
+                div.innerHTML = `
+                    <p>${index + 1}. ${q.text}</p>
+                    <label>
+                        <input type="radio" name="q${index}" value="true"> Đúng
+                    </label>
+                    <label>
+                        <input type="radio" name="q${index}" value="false"> Sai
+                    </label>
+                `;
+                quizContainer.appendChild(div);
+            });
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected && JSON.parse(selected.value) === q.answer) {
+                    score++;
+                }
+            });
+            document.getElementById("result").innerText = `Bạn đạt ${score} / ${questions.length} điểm!`;
+        }
+
+        loadQuestions();
+    </script>
+
+</body>
+</html>
