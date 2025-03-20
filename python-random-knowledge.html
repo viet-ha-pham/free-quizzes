@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự thật về Python</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kiến Thức Ngẫu Nhiên</h2>
+        <p id="knowledge"></p>
+    </div>
+    
+    <script>
+        const knowledgeList = [
+    "Python là một ngôn ngữ lập trình phổ biến và dễ học.",
+    "Python có cú pháp đơn giản, dễ đọc và dễ viết.",
+    "Python hỗ trợ lập trình hướng đối tượng, lập trình hàm và lập trình thủ tục.",
+    "Python có thư viện phong phú, phục vụ nhiều lĩnh vực khác nhau.",
+    "Python là ngôn ngữ thông dịch, không cần biên dịch trước khi chạy.",
+    "Python có thể chạy trên nhiều hệ điều hành như Windows, macOS, Linux.",
+    "Python hỗ trợ quản lý bộ nhớ tự động với garbage collection.",
+    "Python thường được sử dụng để phân tích dữ liệu và khoa học dữ liệu.",
+    "Python có thể được dùng để phát triển web với Flask, Django.",
+    "Python có thể xây dựng ứng dụng trí tuệ nhân tạo và machine learning.",
+    "Python có thư viện mạnh mẽ như NumPy, Pandas, Matplotlib.",
+    "Python là một trong những ngôn ngữ phổ biến nhất thế giới.",
+    "Python hỗ trợ lập trình đa luồng và xử lý song song.",
+    "Python có cú pháp linh hoạt, dễ viết code ngắn gọn và hiệu quả.",
+    "Python có thư viện TensorFlow và PyTorch hỗ trợ deep learning.",
+    "Python có thể được sử dụng để viết script tự động hóa công việc.",
+    "Python có cú pháp gần gũi với ngôn ngữ tự nhiên, dễ học cho người mới.",
+    "Python hỗ trợ kiểu dữ liệu động, không cần khai báo kiểu trước.",
+    "Python có thể tạo ứng dụng GUI với Tkinter, PyQt, Kivy.",
+    "Python có hệ sinh thái phát triển game với Pygame.",
+    "Python có thể được nhúng vào các ngôn ngữ khác như C, C++.",
+    "Python hỗ trợ giao tiếp với cơ sở dữ liệu như MySQL, PostgreSQL.",
+    "Python có thể tạo chatbot với thư viện như ChatterBot.",
+    "Python có cú pháp indent thay vì dấu ngoặc nhọn để xác định khối lệnh.",
+    "Python có công cụ quản lý gói mạnh mẽ như pip.",
+    "Python có thể phát triển ứng dụng di động với Kivy và BeeWare.",
+    "Python hỗ trợ lập trình mạng với thư viện socket.",
+    "Python có thể tạo API với Flask hoặc FastAPI.",
+    "Python có thể lập trình blockchain và tiền điện tử.",
+    "Python hỗ trợ web scraping với BeautifulSoup, Scrapy.",
+    "Python có thể lập trình hệ thống nhúng như Raspberry Pi.",
+    "Python có thể tạo bot trên Telegram, Discord, Facebook.",
+    "Python có thể dùng để kiểm thử phần mềm với unittest, pytest.",
+    "Python có thể làm việc với file JSON, XML, CSV dễ dàng.",
+    "Python có thể thao tác với Excel bằng thư viện openpyxl.",
+    "Python có thể thực hiện lập trình hệ thống, quản lý file, thư mục.",
+    "Python hỗ trợ lập trình functional với map, filter, reduce.",
+    "Python có thể xử lý ngôn ngữ tự nhiên với NLTK, spaCy.",
+    "Python có thể tạo đồ thị, biểu đồ bằng Matplotlib, Seaborn.",
+    "Python có thể tạo hiệu ứng đồ họa với OpenCV.",
+    "Python có thể lập trình Arduino với thư viện pySerial.",
+    "Python có thể dùng để viết phần mềm kiểm soát máy tính.",
+    "Python có thể chạy trên trình duyệt với Pyodide.",
+    "Python có thể được biên dịch sang mã máy bằng Cython.",
+    "Python có thể viết plugin cho Blender, GIMP.",
+    "Python có thể tạo website thương mại điện tử với Django.",
+    "Python có thể lập trình mô phỏng vật lý với VPython.",
+    "Python hỗ trợ lập trình bất đồng bộ với async/await.",
+    "Python có thể làm việc với blockchain Ethereum bằng Web3.py.",
+    "Python có thể lập trình IoT với MicroPython."
+];
+        
+        document.getElementById("knowledge").textContent = knowledgeList[Math.floor(Math.random() * knowledgeList.length)];
+    </script>
+</body>
+</html>
